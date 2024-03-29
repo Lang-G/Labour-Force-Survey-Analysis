@@ -2,13 +2,13 @@
 """
 Created on Thu Mar 21 23:22:30 2024
 
-@author: wutau
+
 """
 
 import requests
 BASE_URL = "https://opendata.nhsbsa.net"
 
-INITIAL_URL = "/api/3/action/datastore_search?resource_id=PCA_"
+INITIAL_URL = "/api/3/action/datastore_search?resource_id=xyy_"
 
 LIMIT=100
 
@@ -27,7 +27,7 @@ def get_all(Period) -> list:
             break
     return result
 
-print(len(get_all("202401")))
+print(len(get_all("202402")))
 
 from pprint import pprint
 pprint(requests.get(BASE_URL+INITIAL_URL+Period+"&limit=1").json()["result"])
